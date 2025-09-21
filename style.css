@@ -95,7 +95,8 @@ header nav a.active{
      nav a{
           display: block;
           font-family: "Amiri";
-          font-style: italic;
+          /* font-style: italic; */
+          font-style: normal;
 
           
      }
@@ -134,18 +135,22 @@ header nav a.active{
 
 .section{
       /* max-width: 400px; */
-      margin-top: 9rem;
+      margin-top: 9.5rem;
       display: flex;
       align-items: center;
       justify-content: space-evenly;
+}
+
+.section .home{
+    text-align: center;
 }
 
 .section .home h1 span,
 .section .home h2 span{
      font-family: "Amiri";
        font-style: italic;
-       color: #1B756B;
-       border-bottom: 3px solid #2acc71;
+       color: var(--color3);
+       border-bottom: 3px solid var(--main-color);
        
 }
 
@@ -153,6 +158,20 @@ header nav a.active{
 .section .home p{
       max-width: 600px;
       margin-top: 12px;
+      text-align: start;
+      margin-left: 10px;
+}
+
+.section .home .btn button{
+      padding: 0.4rem 2rem;
+      color: #0a0a0a;
+      background-color: #2acc71;
+      cursor: pointer;
+      font-weight: 600;
+      border: 2px solid #fff;
+      border-radius: 10px;
+      margin-top: 15px;
+
 }
 
 .section .images img{
@@ -193,4 +212,191 @@ header nav a.active{
 
 
 
+/* about me design */
+.about_me{
+     display: flex;
+     align-items: center;
+     justify-content: space-evenly;
+     margin-top: 6rem;
+}
 
+
+
+
+.about_me .content-me{
+     max-width: 600px;
+}
+
+
+.home__img__wrapper{
+    position: relative;
+}
+
+.home__img__wrapper::before,
+.home__img__wrapper::after{
+          content: "";
+          position: absolute; 
+          inset: 0;
+}
+ 
+.home__img__wrapper::before{         
+    background:linear-gradient( var(--color3),var(--main-color));
+    animation: animate__before 8s ease-in-out infinite;
+     box-shadow:  0 0 10px var(--color3),
+      0 0 25px blue,
+      0 0 35px var(--main-color),
+      0 0 50px var(--color3),
+      0 0 60px blue;
+}
+
+
+  /* Home animation */
+
+.home__img__wrapper::after,
+.home__img{
+    background:linear-gradient( blue,var(--color3));
+    animation: animate__after  8s ease-in-out infinite;
+     box-shadow:  0 0 10px var(--color3),
+      0 0 13px blue,
+      0 0 20px var(--main-color),
+      0 0 30px var(--color3),
+      0 0 40px blue;
+}
+
+.home__img{
+    z-index:1;
+    position: relative;
+    vertical-align: middle;
+     width: 300px;
+     border: 1px solid #ffff;
+     border-radius: 50%;
+     box-shadow: 0 0 10px var(--main-color),
+                 0 0 20px var(--main-color), 
+                 0 0 30px var(--main-color);
+}
+
+@keyframes animate__after{
+    0%{
+     border-radius: 65% 35% 29% 71% / 55% 30% 70% 45% ;
+    }
+
+    50%{
+     border-radius: 21% 79% 50% 50% / 21% 50% 50% 79% ;
+    }
+
+    100%{
+     border-radius: 65% 35% 29% 71% / 55% 30% 70% 45% ;
+    }
+}
+
+@keyframes animate__before{
+ 0%{
+  border-radius: 21% 79% 50% 50% / 21% 50% 50% 79% ;
+ }
+
+ 50%{
+  border-radius: 65% 35% 29% 71% / 55% 30% 70% 45% ;
+ }
+
+100%{
+  border-radius: 21% 79% 50% 50% / 21% 50% 50% 79% ;
+ }
+}  
+
+
+/* .home-img{
+    border-radius: 50%;
+} */
+
+.about_me .content-me .Skills{
+      display: flex;
+      align-items: center;
+      justify-content: start;
+      margin-top: 30px;
+}
+
+.about_me .content-me .Skills a i{
+      
+      font-size: 2.4rem;
+      margin-left: 20px;
+}
+
+.about_me .Skills .skills1 a i{
+      color: #fff;
+      background-color: orangered;
+      border: 2px solid #fff;
+      padding: 6px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px orangered;
+
+    
+}
+
+.about_me .Skills .skills_2 a i{
+      color: #d221f1;
+       border: 2px solid #fff;
+       background-color: #fff;
+      padding: 6px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #d221f1;
+   
+     
+}
+
+.about_me .Skills .skills_3 a i{
+      color: black;
+       border: 2px solid #fff;
+      padding: 6px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px yellow;
+      background-color: yellow;
+   
+}
+
+
+
+.about_me .content-me h1 span,
+.about_me .content-me h2 span{
+     color: #2acc71;
+     border-bottom: 2px solid var(--main-color);
+     font-family: "Amiri";
+     font-style: italic;
+}
+
+.about_me .content-me h3{
+      margin-top: 10px;
+      font-weight: 500;
+      color: #2acc71;
+      margin-left: 10px;
+}
+.about_me .content-me h3 span{
+     color: #fff;
+     border-bottom: 2px solid #1B756B;
+}
+
+
+.about_me .content-me p{
+     margin-top: 12px;
+     margin-left: 10px;
+}
+       
+
+
+@media screen and (min-width:320px) and (max-width:768px){
+       .about_me{
+           flex-direction: column;
+       }
+
+       
+
+       
+.about_me .content-me h1,
+.about_me .content-me h2{
+      text-align: center;
+      margin-top: 10px;
+      margin-bottom: 10px;
+}
+
+
+     
+}
